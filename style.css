@@ -1,0 +1,424 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: hsl(27, 66%, 92%);
+  }
+  .main {
+    width: 100%;
+    padding: 10px;
+    max-width: 550px;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .upper_card {
+    width: 100%;
+    height: 8rem;
+    background-color: hsl(10, 79%, 65%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  .balance {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+    color: white;
+  }
+  .balance p:nth-child(1) {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .balance p:nth-child(2) {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  #chart_card {
+    margin-top: 15px;
+    width: 100%;
+    height: 65%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+  }
+  .heading h1 {
+    font-weight: 700;
+    font-size: 28px;
+    color: hsl(25, 47%, 15%);
+  }
+  .card_slider {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .card_slider::-webkit-scrollbar {
+    display: none;
+  }
+  #card {
+    width: fit-content;
+    height: 18rem;
+    display: flex;
+    gap: 1rem;
+    transform: rotateX(180deg);
+  }
+  .graph {
+    width: 3.4rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transform: rotateX(180deg);
+    position: relative;
+  }
+  .tooltip {
+    position: absolute;
+    display: none;
+    transform: translateX(0%);
+    top: -40px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+  }
+  .days_card {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    overflow: auto;
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: hsl(27, 66%, 92%);
+    margin-top: 2rem;
+  }
+  .bottom_card {
+    width: 100%;
+    height: 8rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  .bottom_card > .balance {
+    color: hsl(25, 47%, 15%);
+  }
+  .bottom_card > .balance p:nth-child(1) {
+    font-size: 16px;
+    color: hsl(28, 10%, 53%);
+  }
+  .bottom_card > .icon p:nth-child(1) {
+    text-align: end;
+    font-size: 16px;
+    font-weight: 700;
+    color: hsl(25, 47%, 15%);
+  }
+  .bottom_card > .icon p:nth-child(2) {
+    font-weight: 400;
+    text-align: end;
+    font-size: 16px;
+    color: hsl(28, 10%, 53%);
+  }
+  .days {
+    position: absolute;
+    bottom: -2rem;
+    transform: translateX(50%);
+    right: 50%;
+    color: hsl(28, 10%, 53%);
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+  body {
+    background-color: hsl(27, 66%, 92%);
+  }
+  .main {
+    width: 100%;
+    padding: 10px;
+    max-width: 550px;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .upper_card {
+    width: 100%;
+    height: 8rem;
+    background-color: hsl(10, 79%, 65%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  .balance {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+    color: white;
+  }
+  .balance p:nth-child(1) {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .balance p:nth-child(2) {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  #chart_card {
+    margin-top: 15px;
+    width: 100%;
+    height: 65%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+  }
+  .heading h1 {
+    font-weight: 700;
+    font-size: 28px;
+    color: hsl(25, 47%, 15%);
+  }
+  .card_slider {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .card_slider::-webkit-scrollbar {
+    display: none;
+  }
+  #card {
+    width: fit-content;
+    height: 18rem;
+    display: flex;
+    gap: 1rem;
+    transform: rotateX(180deg);
+  }
+  .graph {
+    width: 3.4rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transform: rotateX(180deg);
+    position: relative;
+  }
+  .tooltip {
+    position: absolute;
+    display: none;
+    transform: translateX(0%);
+    top: -40px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+  }
+  .days_card {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    overflow: auto;
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: hsl(27, 66%, 92%);
+    margin-top: 2rem;
+  }
+  .bottom_card {
+    width: 100%;
+    height: 8rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  .bottom_card > .balance {
+    color: hsl(25, 47%, 15%);
+  }
+  .bottom_card > .balance p:nth-child(1) {
+    font-size: 16px;
+    color: hsl(28, 10%, 53%);
+  }
+  .bottom_card > .icon p:nth-child(1) {
+    text-align: end;
+    font-size: 16px;
+    font-weight: 700;
+    color: hsl(25, 47%, 15%);
+  }
+  .bottom_card > .icon p:nth-child(2) {
+    font-weight: 400;
+    text-align: end;
+    font-size: 16px;
+    color: hsl(28, 10%, 53%);
+  }
+  .days {
+    position: absolute;
+    bottom: -2rem;
+    transform: translateX(50%);
+    right: 50%;
+    color: hsl(28, 10%, 53%);
+  }
+}
+@media only screen and (min-width: 1000px) {
+    body {
+        background-color: hsl(27, 66%, 92%);
+      }
+      .main {
+        width: 100%;
+        padding: 10px;
+        max-width: 550px;
+        margin: auto;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .upper_card {
+        width: 100%;
+        height: 8rem;
+        background-color: hsl(10, 79%, 65%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+      .balance {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 15px;
+        color: white;
+      }
+      .balance p:nth-child(1) {
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .balance p:nth-child(2) {
+        font-size: 32px;
+        font-weight: 700;
+      }
+      #chart_card {
+        margin-top: 15px;
+        width: 100%;
+        height: fit-content;
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem 1rem;
+      }
+      .heading h1 {
+        font-weight: 700;
+        font-size: 28px;
+        color: hsl(25, 47%, 15%);
+      }
+      .card_slider {
+        width: 100%;
+        overflow-x: auto;
+      }
+      .card_slider::-webkit-scrollbar {
+        display: none;
+      }
+      #card {
+        width: fit-content;
+        height: 18rem;
+        display: flex;
+        gap: 1rem;
+        transform: rotateX(180deg);
+      }
+      .graph {
+        width: 3.4rem;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        transform: rotateX(180deg);
+        position: relative;
+        cursor: pointer;
+      }
+      .tooltip {
+        position: absolute;
+        transform: translateX(0%);
+        top: -40px;
+        opacity: 0;
+        width: 100px;
+        background-color: hsl(25, 47%, 15%);
+        border-radius: 5px;
+        color: white;
+        width: fit-content;
+        padding: 10px;
+        transition: all 300ms;
+      }
+      .tooltip::before{
+        content: "$";
+      }
+      .graph:hover .tooltip{
+        opacity: 1;
+      }
+      .days_card {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        overflow: auto;
+      }
+      .line {
+        width: 100%;
+        height: 2px;
+        background-color: hsl(27, 66%, 92%);
+        margin-top: 2rem;
+      }
+      .bottom_card {
+        width: 100%;
+        height: 8rem;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+      .bottom_card > .balance {
+        color: hsl(25, 47%, 15%);
+      }
+      .bottom_card > .balance p:nth-child(1) {
+        font-size: 16px;
+        color: hsl(28, 10%, 53%);
+      }
+      .bottom_card > .icon p:nth-child(1) {
+        text-align: end;
+        font-size: 24px;
+        font-weight: 700;
+        color: hsl(25, 47%, 15%);
+      }
+      .bottom_card > .icon p:nth-child(2) {
+        font-weight: 400;
+        text-align: end;
+        font-size: 18px;
+        color: hsl(28, 10%, 53%);
+      }
+      .days {
+        position: absolute;
+        bottom: -2rem;
+        transform: translateX(50%);
+        right: 50%;
+        color: hsl(28, 10%, 53%);
+      }   
+}
